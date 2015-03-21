@@ -32,5 +32,85 @@ From another function, you can do the following:
 neat varName;
 varName->a = 5;
 varName.b(4);
+free(varName);
 ```
 Notice how functions are called with dot notation but variables with the arrow notation.
+
+Additionally, all classes are dynamically allocated when created, and can be freed just like anything else with the free function.
+
+###Context
+From within a function, a the class's instance variables can be referenced.
+
+This can be done with the `self` variable. For example, we could rewrite the function `b` on our `neat` class above to be the following:
+```
+int b(int c) {
+  return self->a;
+}
+```
+Now it will return the value of item `a` stored in the class.
+
+##Examples
+The following demonstrates the compilation from CWSC to C.
+
+This file (samplestart.c):
+```C
+#include <stdio.h>
+#include <stdlib.h>
+
+class neat {
+	int wow(char a) {
+		if(a == 'a') {
+			return 3;
+		} else {
+			return 2;
+		}
+	}
+	int socool(int b) {
+		printf("%d\n", b);
+		printf("How cool! %d\n", self->var);
+	}
+	int var;
+}
+int main(int argc, char* argv) {
+        neat a;
+        if(a.wow('a')==3) {
+		printf("NEAT");
+	}
+	a.socool(53);
+	a->var = 5;
+	a.socool(54);
+        return 0;
+}
+```
+becomes
+```C
+#include <stdio.h>
+#include <stdlib.h>
+struct neat {
+int var;
+};
+int __neat_wow(struct neat* self, char a) { 
+if(a == 'a') {
+return 3;
+} else {
+return 2;
+}
+}
+
+int __neat_socool(struct neat* self, int b) { 
+printf("%d\n", b);
+printf("How cool! %d\n", self->var);
+}
+
+int main(int argc, char* argv) {
+struct neat* a = malloc(sizeof(struct neat));
+if( __neat_wow(a, 'a')==3) {
+printf("NEAT");
+}
+ __neat_socool(a, 53);
+a->var = 5;
+ __neat_socool(a, 54);
+return 0;
+}
+```
+Notice that all of the spacing is removed, and that class functions get named `__className_functionName`. Also notice how the `self` value is passed to all functions.
