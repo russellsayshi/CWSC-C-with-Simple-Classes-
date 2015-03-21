@@ -71,7 +71,7 @@ class neat {
 	}
 	int var;
 }
-int main(int argc, char* argv) {
+int main(int argc, char** argv) {
 	neat a;
 	if(a.wow('a')==3) {
 		printf("NEAT");
@@ -102,7 +102,7 @@ printf("%d\n", b);
 printf("How cool! %d\n", self->var);
 }
 
-int main(int argc, char* argv) {
+int main(int argc, char** argv) {
 struct neat* a = malloc(sizeof(struct neat));
 if( __neat_wow(a, 'a')==3) {
 printf("NEAT");
