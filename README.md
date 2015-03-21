@@ -82,7 +82,7 @@ int main(int argc, char* argv) {
 	return 0;
 }
 ```
-becomes
+becomes when compiled:
 ```C
 #include <stdio.h>
 #include <stdlib.h>
