@@ -72,8 +72,8 @@ class neat {
 	int var;
 }
 int main(int argc, char* argv) {
-        neat a;
-        if(a.wow('a')==3) {
+	neat a;
+	if(a.wow('a')==3) {
 		printf("NEAT");
 	}
 	a.socool(53);
