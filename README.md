@@ -17,7 +17,7 @@ To create a class, use `class <name> {...}`. It's pretty simple.
 Once in a class, you can add instance variables and functions.
 
 Demo:
-```
+```C
 class neat {
   int a;
   char b(int c) {
@@ -28,7 +28,7 @@ class neat {
 
 That's all there is to class creation.
 From another function, you can do the following:
-```
+```C
 neat varName;
 varName->a = 5;
 varName.b(4);
@@ -42,7 +42,7 @@ Additionally, all classes are dynamically allocated when created, and can be fre
 From within a function, a the class's instance variables can be referenced.
 
 This can be done with the `self` variable. For example, we could rewrite the function `b` on our `neat` class above to be the following:
-```
+```C
 int b(int c) {
   return self->a;
 }
