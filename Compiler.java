@@ -118,7 +118,7 @@ public class Compiler {
 					if(include[0] == '"') {
 						for(int i = 1; i < include.length; i++) {
 							if(include[i] == '"') {
-								System.out.println("Note to me: should include file, but probably just use gcc -E in the future: " + line.substring(8).trim().substring(1, i));
+								System.out.println("Note: this does not process included files. To do so, (assuming gcc), use the -E flag to get preprocessor output, and then run the result of that through this compiler. Line number: " + line.substring(8).trim().substring(1, i));
 								continue;
 							}
 						}
