@@ -2,7 +2,7 @@
 A short one-day project I hacked together in Java to allow simple class creation in C. It allows compilation of files to C.
 
 ##Warnings
-CWSC does not yet have preprocessor support. To compile properly with imported classes and files, as well as preprocessor definitions, I recommend using `gcc -E` to generate preprocessed file output first. MSVC also has an `/E` option for getting preprocessor output. That can then be fed to this application.
+CWSC does not yet have preprocessor support. To compile properly with `#include`d classes and files, as well as preprocessor definitions, I recommend using `gcc -E` to generate preprocessed file output first. MSVC also has an `/E` option for getting preprocessor output. That can then be fed to this application.
 
 Additionally, as this application does not have preprocessor support, it won't detect included files, but depends on `stdlib.h`. Make sure to include that before attempting to compile.
 
