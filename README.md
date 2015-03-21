@@ -113,4 +113,4 @@ a->var = 5;
 return 0;
 }
 ```
-Notice that all of the spacing is removed, and that class functions get named `__className_functionName`. Also notice how the `self` value is passed to all functions.
+Notice that the indenting is removed, and that class functions get named `__className_functionName`. Also notice how the `self` value is passed to all functions.
