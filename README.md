@@ -79,7 +79,7 @@ int main(int argc, char* argv) {
 	a.socool(53);
 	a->var = 5;
 	a.socool(54);
-        return 0;
+	return 0;
 }
 ```
 becomes
