@@ -12,7 +12,7 @@ Usage of CWSC is very simple.
 Simply type `java Compiler <files...>`, or, if you hate typing `java` like I do, use the `compile.sh` wrapper included.
 
 ##Syntax
-To create a class, use `class <name> {`. It's pretty simple.
+To create a class, use `class <name> {...}`. It's pretty simple.
 
 Once in a class, you can add instance variables and functions.
 
